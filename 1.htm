@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,74 @@
   <meta name="description" content="FMoran的博客 - 一个分享个人见解和故事的博客。">
   <link rel="stylesheet" href="style/bg.css">
   <style>
-    /* Add space between footer and main content */
-    main {
-      margin-bottom: 50px; /* Adjust this value to increase or decrease the space */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
+
+    header {
+      background-color: #f5f5f5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .h1 {
+      margin: 0;
+    }
+
+    .nav {
+      margin-top: 10px;
+    }
+
+    main {
+      margin: 20px; /* Add margin around the main content */
+    }
+
+    article {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
     nav {
       margin-top: 20px;
     }
 
     nav p {
-      margin: 10;
+      margin: 0;
     }
+
     nav a {
       text-decoration: none;
-      }
+    }
+
+    footer {
+      background-color: #f5f5f5;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer strong {
+      margin-right: 10px;
+    }
   </style>
 </head>
+
 <body>
   <header>
-      <h1 class="h1">白丁轶事</h1>
-      <nav class="nav">
-          <a href="/index.htm" class="a">首页</a>
-          <a href="https://github.com/flysheepfdn" class="a">Github</a>
-          <a href="/About.htm" class="a">关于</a>
-      </nav>
+    <h1 class="h1">白丁轶事</h1>
+    <nav class="nav">
+      <a href="/index.htm" class="a">首页</a>
+      <a href="https://github.com/flysheepfdn" class="a">Github</a>
+      <a href="/About.htm" class="a">关于</a>
+    </nav>
   </header>
   <main>
     <article>
@@ -39,24 +84,24 @@
           algorithm, but the truth is I can't.</p>
       </div>
     </article>
-    <nav style="margin-left: 50px;">
+    <nav>
       <p>2024/02/08 <a href="/Blog/20240208.htm">撕裂处好补，磨破处难补</a></p>
       <p>2023/09/18 <a href="/Blog/20230918.htm">关于合肥成为新一线城市</a></p>
       <p>2023/08/20 <a href="/Blog/20230820.htm">关于24小时连锁便利店开进县城</a></p>
       <p>2019/03/25 <a href="/Blog/20190325.htm">故乡的冷</a></p>
       <p>2018/11/25 <a href="/Blog/20181125.htm">老烟斗</a></p>
       <p>2018/11/17 <a href="/Blog/20181117.htm">战争</a></p>
-
     </nav>
   </main>
   <footer>
-    <div style="float: left;"> 
-      <strong style="margin-left: 50px;">白丁轶事</strong>
-      <span style="margin-left: 10px;">FMoran</span>
+    <div>
+      <strong>白丁轶事</strong>
+      <span>FMoran</span>
     </div>
-    <div style="float: right;">
-      <span style="margin-right: 50px;">© FMoran 2024</span>
+    <div>
+        © FMoran 2024
     </div>
-  </footer>  
+  </footer>
 </body>
+
 </html>
