@@ -1,0 +1,56 @@
+.background-image {
+  background-image: (to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.title {
+  color: brown;
+}
+
+.h1 {
+  font-size: 36px;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+
+}
+
+.nav {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.a {
+  font-size: 18px;
+  max-width: 800px;
+  padding: 4px;
+  background-color: beige;
+  color: black;
+  text-decoration: none;
+}
+
+.p {
+  text-indent: 7%;
+  color: black;
+  font-size: 20px;
+  padding: 5%;
+}
+
+.nav2 {
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  padding: 5%;
+
+  font-size: 20px;
+
+}
+
+p {
+  color: #333;
+
+}
