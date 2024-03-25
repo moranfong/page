@@ -1,0 +1,14 @@
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 7px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer span {
+    display: block;
+    margin-top: 5px;
+  }
