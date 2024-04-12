@@ -2,7 +2,6 @@ header {
   font-family: "PingFang SC", Microsoft YaHei, sans-serif;
   padding: 20px 0;
   text-align: center;
-
 }
 
 body {
@@ -23,7 +22,7 @@ nav {
 }
 
 nav a {
-  text-decoration: none; 
+  text-decoration: none;
   color: #007bff;
   margin: 0 10px;
   font-size: 18px;
@@ -114,7 +113,6 @@ footer span {
 }
 
 
-
 /* 文章页面 */
 article {
   padding: 20px;
@@ -161,4 +159,9 @@ article p {
 article p:last-child {
   margin-bottom: 0;
   /* 最后一个段落去除下边距 */
+}
+
+.article-container {
+  margin-left: 20px; /* Adjust this value as per your requirement */
+  margin-right: 20px; /* Adjust this value as per your requirement */
 }
