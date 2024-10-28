@@ -83,7 +83,6 @@
 
         .home-button {
             background: white;
-            color: #46aef7;
             font-weight: bold;
             padding: 0.5rem 1rem;
             border-radius: 9999px;
@@ -95,21 +94,6 @@
         .home-button:hover {
             background: #f0f7ff;
             transform: translateY(-2px);
-        }
-
-        /* 添加暗色模式支持 */
-        @media (prefers-color-scheme: dark) {
-            .card {
-                background: rgba(30, 41, 59, 0.7);
-            }
-
-            .home-button {
-                background: rgba(255, 255, 255, 0.9);
-            }
-
-            h1, p {
-                color: white;
-            }
         }
 
         /* 添加响应式设计优化 */
@@ -169,7 +153,7 @@
         </nav>
 
         <button class="home-button" onclick="window.location.href='https://fmoran.me'">
-            Go Home
+            Home
         </button>
     </main>
 
