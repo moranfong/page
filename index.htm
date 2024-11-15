@@ -89,6 +89,7 @@
             border: none;
             cursor: pointer;
             transition: all var(--hover-transition);
+            margin: 0 0.5rem;
         }
 
         .home-button:hover {
@@ -96,6 +97,12 @@
             transform: translateY(-2px);
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+          }
+          
         /* 添加响应式设计优化 */
         @media (max-width: 480px) {
             .card {
