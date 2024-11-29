@@ -21,7 +21,7 @@
         /* 使用 CSS 变量和 clamp() 实现响应式单位 */
         :root {
             --hover-transition: 0.3s ease-in-out;
-            --icon-size: clamp(1.2em, 4vw, 1.5em);
+            --icon-size: clamp(1.5em, 5w, 2.5em);
             --card-padding: clamp(1.5rem, 5vw, 2.5rem);
             --card-width: clamp(300px, 90%, 400px);
         }
@@ -60,9 +60,9 @@
         .social-icons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: clamp(0.8rem, 3vw, 1.5rem);
+            gap: clamp(1.5rem, 5vw, 2.5rem); /* 增加了间距 */
             width: fit-content;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
         }
 
         .icon-twitter { color: #1DA1F2; }
