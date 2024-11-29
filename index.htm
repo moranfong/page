@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Moran Fong</title>
     
-    <!-- 使用 preconnect 优化第三方资源加载 -->
+    <!-- 预连接优化 -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -18,10 +18,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
 
     <style>
-        /* 使用CSS变量方便主题定制 */
+        /* 使用 CSS 变量和 clamp() 实现响应式单位 */
         :root {
             --hover-transition: 0.3s ease-in-out;
-            --icon-size: 1.5em;
+            --icon-size: clamp(1.2em, 4vw, 1.5em);
+            --card-padding: clamp(1.5rem, 5vw, 2.5rem);
+            --card-width: clamp(300px, 90%, 400px);
         }
 
         body {
@@ -31,86 +33,95 @@
             align-items: center;
             justify-content: center;
             margin: 0;
+            font-size: clamp(14px, 2vw, 16px);
         }
 
         .card {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(10px);
-            padding: 2.5rem;
+            padding: var(--card-padding);
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 90%;
-            width: 400px;
+            width: var(--card-width);
             margin: 1rem;
+            transition: all 0.3s ease;
         }
 
         .profile-img {
-            width: 75px;
-            height: 75px;
+            width: clamp(60px, 20vw, 75px);
+            height: clamp(60px, 20vw, 75px);
             border-radius: 15%;
             margin: 0 auto 1rem;
             display: block;
+            object-fit: cover;
         }
 
         .social-icons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: clamp(0.8rem, 3vw, 1.5rem);
             width: fit-content;
             margin: 1.5rem auto;
-        }
-
-        .icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: var(--icon-size);
-            height: var(--icon-size);
-            transition: transform var(--hover-transition);
-        }
-
-        .icon-wrapper:hover {
-            transform: translateY(-4px) scale(1.05);
         }
 
         .icon-twitter { color: #1DA1F2; }
         .icon-instagram { color: #E4405F; }
         .icon-spotify { color: #1DB954; }
         .icon-github { color: #333333; }
-        .icon-email { color: #4285F4; }
-        .icon-signal { color: #3A76F0; }
+        .icon-email { color: #1877f2; }
+        .icon-signal { color: #3845ff; }
+        
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            transition: transform var(--hover-transition), box-shadow var(--hover-transition);
+        }
+
+        .icon-wrapper:hover {
+            transform: translateY(-4px) scale(1.1);        }
+
+        .icon-wrapper:active {
+            transform: translateY(0) scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
         .home-button {
             background: white;
             font-weight: bold;
-            padding: 0.5rem 1rem;
+            padding: clamp(0.4rem, 2vw, 0.5rem) clamp(0.8rem, 4vw, 1rem);
             border-radius: 9999px;
             border: none;
             cursor: pointer;
             transition: all var(--hover-transition);
             margin: 0 0.5rem;
+            font-size: clamp(0.8rem, 3vw, 1rem);
         }
 
         .home-button:hover {
             background: #f0f7ff;
             transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            background: #e6f2ff;
         }
 
         .button-container {
             display: flex;
             justify-content: center;
             margin-top: 1rem;
-          }
-          
-        /* 添加响应式设计优化 */
-        @media (max-width: 480px) {
-            .card {
-                padding: 1.5rem;
-            }
+        }
 
-            .social-icons {
-                gap: 1rem;
+        @supports not (backdrop-filter: blur(10px)) {
+            .card {
+                background: rgba(255, 255, 255, 0.9);
             }
         }
     </style>
@@ -118,53 +129,104 @@
 
 <body>
     <main class="card">
-        <img src="/profile.webp" alt="FMoran Profile Picture" class="profile-img"
-             loading="lazy" fetchpriority="high">
+        <picture>
+            <source srcset="/profile.webp" type="image/webp">
+            <img src="/profile.jpg" alt="Moran Profile Picture" 
+                 class="profile-img" 
+                 loading="lazy" 
+                 fetchpriority="high">
+        </picture>
+        
         <h1 class="text-2xl font-bold mb-2">Moran Fong</h1>
-        <p class="text-gray-600 mb-4">Everything should be blurred.</p>
+        <p class="text-gray-600 mb-4">Look for me in the corners of the world.</p>
         
         <nav class="social-icons" aria-label="Social media links">
-            <a href="https://x.com/NoPeople404/" class="icon-wrapper icon-twitter" aria-label="Twitter">
+            <a href="https://x.com/NoPeople404/" 
+               class="icon-wrapper icon-twitter" 
+               aria-label="Twitter" 
+               rel="me noopener noreferrer"
+               title="Follow me on Twitter">
                 <i class="fab fa-twitter fa-lg"></i>
             </a>
-            <a href="https://m.okjike.com/users/D6FDEB80-E343-4022-A4F8-3431F7F63C19" class="icon-wrapper" aria-label="Jike">
+            
+            <a href="https://m.okjike.com/users/D6FDEB80-E343-4022-A4F8-3431F7F63C19" 
+               class="icon-wrapper" 
+               aria-label="Jike"
+               rel="me noopener noreferrer"
+               title="Jike Profile">
                 <svg class="icon-jike" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path d="M660.39 123.63v463.59S645.04 726.4 558.98 771.43c-53.12 31.21-128.85 67.54-228.63 70.61l58.33 58.33s175-15.35 254.82-87.5 82.89-159.9 82.89-194.31V172.75l-66-49.12z" fill="#62B2E4"/>
                     <path d="M660.39 123.63v463.58s-15.36 139.17-101.41 184.21c-53.12 31.22-128.85 67.54-228.62 70.62L297.6 702.85s70.62-13.31 117.71-28.64c47.07-15.36 72-95.19 72-95.19V123.63h173.08z" fill="#F3DB2B"/>
                 </svg>
             </a>
-            <a href="https://m.douban.com/people/197542183/" class="icon-wrapper" aria-label="Douban">
+            
+            <a href="https://m.douban.com/people/197542183/" 
+               class="icon-wrapper" 
+               aria-label="Douban"
+               rel="me noopener noreferrer"
+               title="Douban Profile">
                 <svg class="icon-douban" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path d="M687.8 607.5H339.7c37.4 62.9 71.5 130.3 102.1 202.1h142.1c43.6-68.2 78.2-135.6 103.9-202.1z m41.7-76.7V381.5H302v149.4h427.5z m173.1 356H121.4v-77.1h233.7c-28.6-62.9-58.9-117.3-90.7-163.1l60.1-39H219.2V303h593.6v304.5H702.3l60.1 39.9c-28.4 62.9-57.9 117-88.6 162.2h228.8v77.2z m-17.1-673.3H143.7v-76.2h741.8v76.2z" fill="#58CB6A"/>
                 </svg>
             </a>
-            <a href="https://www.instagram.com/fmoran.me/" class="icon-wrapper icon-instagram" aria-label="Instagram">
+            
+            <a href="https://www.instagram.com/fmoran.me/" 
+               class="icon-wrapper icon-instagram" 
+               aria-label="Instagram"
+               rel="me noopener noreferrer"
+               title="Instagram Profile">
                 <i class="fab fa-instagram fa-lg"></i>
             </a>
-            <a href="https://open.spotify.com/user/41o2zvztnt5z3ugwwkcgjpn6z/" class="icon-wrapper icon-spotify" aria-label="Spotify">
+            
+            <a href="https://open.spotify.com/user/41o2zvztnt5z3ugwwkcgjpn6z/" 
+               class="icon-wrapper icon-spotify" 
+               aria-label="Spotify"
+               rel="me noopener noreferrer"
+               title="Spotify Profile">
                 <i class="fab fa-spotify fa-lg"></i>
             </a>
-            <a href="https://github.com/moranfong/" class="icon-wrapper icon-github" aria-label="GitHub">
+            
+            <a href="https://github.com/moranfong/" 
+               class="icon-wrapper icon-github" 
+               aria-label="GitHub"
+               rel="me noopener noreferrer"
+               title="GitHub Profile">
                 <i class="fab fa-github fa-lg"></i>
             </a>
-            <a href="mailto:me@moranfong.com" class="icon-wrapper icon-email" aria-label="Email">
+            
+            <a href="mailto:hi@moranfong.com" 
+               class="icon-wrapper icon-email" 
+               aria-label="Email"
+               rel="me"
+               title="Send an Email">
                 <i class="fa-solid fa-envelope"></i>
             </a>
+            
             <a href="https://signal.me/#eu/3HL7nLeMMVdqAw_PhJs3tL76ZT4-civXyTLnXyxtZKzmaNWK0SlNRKosoQHXK135" 
-               class="icon-wrapper icon-signal" aria-label="Signal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signal" 
-                     viewBox="0 0 16 16" aria-hidden="true">
+               class="icon-wrapper icon-signal" 
+               aria-label="Signal"
+               rel="me noopener noreferrer"
+               title="Signal Contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signal" viewBox="0 0 16 16" aria-hidden="true">
                     <path d="m6.08.234.179.727a7.3 7.3 0 0 0-2.01.832l-.383-.643A7.9 7.9 0 0 1 6.079.234zm3.84 0L9.742.96a7.3 7.3 0 0 1 2.01.832l.388-.643A8 8 0 0 0 9.92.234m-8.77 3.63a8 8 0 0 0-.916 2.215l.727.18a7.3 7.3 0 0 1 .832-2.01l-.643-.386zM.75 8a7 7 0 0 1 .081-1.086L.091 6.8a8 8 0 0 0 0 2.398l.74-.112A7 7 0 0 1 .75 8m11.384 6.848-.384-.64a7.2 7.2 0 0 1-2.007.831l.18.728a8 8 0 0 0 2.211-.919M15.251 8q0 .547-.082 1.086l.74.112a8 8 0 0 0 0-2.398l-.74.114q.082.54.082 1.086m.516 1.918-.728-.18a7.3 7.3 0 0 1-.832 2.012l.643.387a8 8 0 0 0 .917-2.219m-6.68 5.25c-.72.11-1.453.11-2.173 0l-.112.742a8 8 0 0 0 2.396 0l-.112-.741zm4.75-2.868a7.2 7.2 0 0 1-1.537 1.534l.446.605a8 8 0 0 0 1.695-1.689zM12.3 2.163c.587.432 1.105.95 1.537 1.537l.604-.45a8 8 0 0 0-1.69-1.691zM2.163 3.7A7.2 7.2 0 0 1 3.7 2.163l-.45-.604a8 8 0 0 0-1.691 1.69l.604.45zm12.688.163-.644.387c.377.623.658 1.3.832 2.007l.728-.18a8 8 0 0 0-.916-2.214M6.913.831a7.3 7.3 0 0 1 2.172 0l.112-.74a8 8 0 0 0-2.396 0zM2.547 14.64 1 15l.36-1.549-.729-.17-.361 1.548a.75.75 0 0 0 .9.902l1.548-.357zM.786 12.612l.732.168.25-1.073A7.2 7.2 0 0 1 .96 9.74l-.727.18a8 8 0 0 0 .736 1.902l-.184.79zm3.5 1.623-1.073.25.17.731.79-.184c.6.327 1.239.574 1.902.737l.18-.728a7.2 7.2 0 0 1-1.962-.811zM8 1.5a6.5 6.5 0 0 0-6.498 6.502 6.5 6.5 0 0 0 .998 3.455l-.625 2.668L4.54 13.5a6.502 6.502 0 0 0 6.93-11A6.5 6.5 0 0 0 8 1.5"/>
                 </svg>
             </a>
         </nav>
 
-        <button class="home-button" onclick="window.location.href='https://fmoran.me/blog'">
-            Blog
-        </button>
-        <button class="home-button" onclick="window.location.href='https://mini.fmoran.me'">
-            Mini
-        </button>
+        <div class="button-container">
+            <button 
+                class="home-button" 
+                onclick="window.location.href='https://fmoran.me/blog'"
+                aria-label="Go to Blog">
+                Blog
+            </button>
+            <button 
+                class="home-button" 
+                onclick="window.location.href='https://mini.fmoran.me'"
+                aria-label="Go to Mini Site">
+                Mini
+            </button>
+        </div>
     </main>
 
     <!-- Google Analytics -->
