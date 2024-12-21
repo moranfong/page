@@ -8,8 +8,6 @@
     <meta property="og:url" content="https://moranfong.com">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Moran Fong</title>
-
-    <!-- 预连接优化 -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -18,7 +16,6 @@
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
     <style>
-        /* 使用 CSS 变量和 clamp() 实现响应式单位 */
         :root {
             --hover-transition: 0.5s ease-in-out;
             --icon-size: clamp(1.5em, 5w, 2.5em);
@@ -138,7 +135,6 @@
             }
         }
 
-        /* 渐变动画 */
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
@@ -193,22 +189,24 @@
     <div class="gradient"></div>
 
     <main class="card">
-        <picture>
-            <source srcset="/profile.webp" type="image/webp">
-            <img src="/profile.jpg" alt="Moran Profile Picture" class="profile-img" loading="lazy" fetchpriority="high">
-        </picture>
-
+        <a href="https://fmoran.me/" target="_blank" rel="noopener noreferrer">
+            <picture>
+                <source srcset="/profile.webp" type="image/webp">
+                <img src="/profile.jpg" alt="Moran Profile Picture" class="profile-img" loading="lazy"
+                    fetchpriority="high">
+            </picture>
+        </a>
         <h1 class="text-2xl font-bold mb-2">Moran Fong</h1>
         <p class="text-gray-600 mb-4">Look for me in the corners of the world.</p>
 
         <nav class="social-icons" aria-label="Social media links">
-            <a href="https://x.com/NoPeople404/" class="icon-wrapper icon-twitter" aria-label="Twitter"
+            <a href="https://s.fmoran.me/X/" class="icon-wrapper icon-twitter" aria-label="Twitter"
                 rel="me noopener noreferrer" title="Follow me on Twitter">
                 <i class="fab fa-twitter fa-lg"></i>
             </a>
 
-            <a href="https://m.okjike.com/users/D6FDEB80-E343-4022-A4F8-3431F7F63C19" class="icon-wrapper"
-                aria-label="Jike" rel="me noopener noreferrer" title="Jike Profile">
+            <a href="https://s.fmoran.me/jike/" class="icon-wrapper" aria-label="Jike" rel="me noopener noreferrer"
+                title="Jike Profile">
                 <svg class="icon-jike" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path
                         d="M660.39 123.63v463.59S645.04 726.4 558.98 771.43c-53.12 31.21-128.85 67.54-228.63 70.61l58.33 58.33s175-15.35 254.82-87.5 82.89-159.9 82.89-194.31V172.75l-66-49.12z"
@@ -219,8 +217,8 @@
                 </svg>
             </a>
 
-            <a href="https://m.douban.com/people/197542183/" class="icon-wrapper" aria-label="Douban"
-                rel="me noopener noreferrer" title="Douban Profile">
+            <a href="https://s.fmoran.me/douban/" class="icon-wrapper" aria-label="Douban" rel="me noopener noreferrer"
+                title="Douban Profile">
                 <svg class="icon-douban" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path
                         d="M687.8 607.5H339.7c37.4 62.9 71.5 130.3 102.1 202.1h142.1c43.6-68.2 78.2-135.6 103.9-202.1z m41.7-76.7V381.5H302v149.4h427.5z m173.1 356H121.4v-77.1h233.7c-28.6-62.9-58.9-117.3-90.7-163.1l60.1-39H219.2V303h593.6v304.5H702.3l60.1 39.9c-28.4 62.9-57.9 117-88.6 162.2h228.8v77.2z m-17.1-673.3H143.7v-76.2h741.8v76.2z"
@@ -228,17 +226,17 @@
                 </svg>
             </a>
 
-            <a href="https://www.instagram.com/fmoran.me/" class="icon-wrapper icon-instagram" aria-label="Instagram"
+            <a href="https://s.fmoran.me/instagram/" class="icon-wrapper icon-instagram" aria-label="Instagram"
                 rel="me noopener noreferrer" title="Instagram Profile">
                 <i class="fab fa-instagram fa-lg"></i>
             </a>
 
-            <a href="https://open.spotify.com/user/41o2zvztnt5z3ugwwkcgjpn6z/" class="icon-wrapper icon-spotify"
-                aria-label="Spotify" rel="me noopener noreferrer" title="Spotify Profile">
+            <a href="https://s.fmoran.me/spotify/" class="icon-wrapper icon-spotify" aria-label="Spotify"
+                rel="me noopener noreferrer" title="Spotify Profile">
                 <i class="fab fa-spotify fa-lg"></i>
             </a>
 
-            <a href="https://github.com/moranfong/" class="icon-wrapper icon-github" aria-label="GitHub"
+            <a href="https://s.fmoran.me/github/" class="icon-wrapper icon-github" aria-label="GitHub"
                 rel="me noopener noreferrer" title="GitHub Profile">
                 <i class="fab fa-github fa-lg"></i>
             </a>
@@ -260,11 +258,15 @@
         </nav>
 
         <div class="button-container">
-            <button class="home-button" onclick="window.location.href='https://fmoran.me/blog'" aria-label="Go to Blog">
+            <button class="home-button" onclick="window.location.href='https://fmoran.me/'" aria-label="Go to Blog">
                 Blog
             </button>
-            <button class="home-button" onclick="window.location.href='https://mini.fmoran.me'"
-                aria-label="Go to Mini Site">
+            <button class="home-button" onclick="window.location.href='https://s.fmoran.me/quail-fmoran/'"
+                aria-label="Go to Newsletteer">
+                Newsletteer
+            </button>
+            <button class="home-button" onclick="window.location.href='https://mini.fmoran.me/'"
+                aria-label="Go to Mini Blog">
                 Mini
             </button>
         </div>
