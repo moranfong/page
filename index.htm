@@ -13,175 +13,9 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
     <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-    <style>
-        :root {
-            --hover-transition: 0.5s ease-in-out;
-            --icon-size: clamp(1.5em, 5w, 2.5em);
-            --card-padding: clamp(1.5rem, 5vw, 2.5rem);
-            --card-width: clamp(300px, 90%, 400px);
-            --size: 400px;
-        }
-
-        .card {
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            padding: var(--card-padding);
-            border-radius: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: var(--card-width);
-            margin: 0 auto 2rem;
-            transition: all 0.5s ease;
-        }
-
-        .profile-img {
-            width: clamp(60px, 20vw, 75px);
-            height: clamp(60px, 20vw, 75px);
-            border-radius: 15%;
-            margin: 0 auto 1rem;
-            display: block;
-            object-fit: cover;
-        }
-
-        .social-icons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: clamp(1.5rem, 3vw, 2.5rem);
-            /* 增加了间距 */
-            width: fit-content;
-            margin: 1.5rem auto;
-        }
-
-        .icon-twitter {
-            color: #1DA1F2;
-        }
-
-        .icon-instagram {
-            color: #E4405F;
-        }
-
-        .icon-spotify {
-            color: #1DB954;
-        }
-
-        .icon-github {
-            color: #333333;
-        }
-
-        .icon-email {
-            color: #1877f2;
-        }
-
-        .icon-signal {
-            color: #3845ff;
-        }
-
-        .icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: var(--icon-size);
-            height: var(--icon-size);
-            transition: transform var(--hover-transition), box-shadow var(--hover-transition);
-        }
-
-        .icon-wrapper:hover {
-            transform: translateY(-4px) scale(1.1);
-        }
-
-        .icon-wrapper:active {
-            transform: translateY(0) scale(0.95);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .home-button {
-            background: white;
-            font-weight: bold;
-            padding: clamp(0.4rem, 2vw, 0.5rem) clamp(0.8rem, 4vw, 1rem);
-            border-radius: 9999px;
-            border: none;
-            cursor: pointer;
-            transition: all var(--hover-transition);
-            margin: 0 0.5rem;
-            font-size: clamp(0.8rem, 3vw, 1rem);
-        }
-
-        .home-button:hover {
-            background: #f0f7ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .home-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            background: #e6f2ff;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        @supports not (backdrop-filter: blur(10px)) {
-            .card {
-                background: rgba(255, 255, 255, 0.9);
-            }
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .gradient {
-            position: absolute;
-            z-index: 1;
-            width: var(--size);
-            height: var(--size);
-            filter: blur(calc(var(--size) / 5));
-            background-image: linear-gradient(hsl(222, 84%, 60%), hsl(164, 79%, 71%));
-            animation: rotate var(--speed) var(--easing) alternate infinite;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-
-        @media (min-width: 720px) {
-            .gradient {
-                --size: 500px;
-            }
-        }
-
-
-        body {
-            background-color: #071c39;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
-        }
-
-        * {
-            transition: all 0.5s ease-out;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script> 
     <script async src="https://cdn.seline.so/seline.js" data-token="95f9c913df26f0b"></script>
 </head>
 
@@ -189,7 +23,7 @@
     <div class="gradient"></div>
 
     <main class="card">
-        <a href="https://fmoran.me/" target="_blank" rel="noopener noreferrer">
+        <a href="https://fmoran.me" target="_blank" rel="noopener noreferrer">
             <picture>
                 <source srcset="/profile.webp" type="image/webp">
                 <img src="/profile.jpg" alt="Moran Profile Picture" class="profile-img" loading="lazy"
@@ -200,12 +34,12 @@
         <p class="text-gray-600 mb-4">Look for me in the corners of the world.</p>
 
         <nav class="social-icons" aria-label="Social media links">
-            <a href="https://s.fmoran.me/X/" class="icon-wrapper icon-twitter" aria-label="Twitter"
-                rel="me noopener noreferrer" title="Follow me on Twitter">
-                <i class="fab fa-twitter fa-lg"></i>
+            <a href="https://s.fmoran.me/github" class="icon-wrapper icon-github" aria-label="GitHub"
+                rel="me noopener noreferrer" title="GitHub Profile">
+                <i class="fab fa-github fa-lg"></i>
             </a>
 
-            <a href="https://s.fmoran.me/jike/" class="icon-wrapper" aria-label="Jike" rel="me noopener noreferrer"
+            <a href="https://s.fmoran.me/jike" class="icon-wrapper" aria-label="Jike" rel="me noopener noreferrer"
                 title="Jike Profile">
                 <svg class="icon-jike" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path
@@ -216,8 +50,13 @@
                         fill="#F3DB2B" />
                 </svg>
             </a>
+            
+            <a href="https://s.fmoran.me/X" class="icon-wrapper icon-twitter" aria-label="Twitter"
+                rel="me noopener noreferrer" title="Follow me on Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
 
-            <a href="https://s.fmoran.me/douban/" class="icon-wrapper" aria-label="Douban" rel="me noopener noreferrer"
+            <a href="https://s.fmoran.me/douban" class="icon-wrapper" aria-label="Douban" rel="me noopener noreferrer"
                 title="Douban Profile">
                 <svg class="icon-douban" viewBox="0 0 1024 1024" width="24" height="24" aria-hidden="true">
                     <path
@@ -226,19 +65,14 @@
                 </svg>
             </a>
 
-            <a href="https://s.fmoran.me/instagram/" class="icon-wrapper icon-instagram" aria-label="Instagram"
+            <a href="https://s.fmoran.me/instagram" class="icon-wrapper icon-instagram" aria-label="Instagram"
                 rel="me noopener noreferrer" title="Instagram Profile">
                 <i class="fab fa-instagram fa-lg"></i>
             </a>
 
-            <a href="https://s.fmoran.me/spotify/" class="icon-wrapper icon-spotify" aria-label="Spotify"
+            <a href="https://s.fmoran.me/spotify" class="icon-wrapper icon-spotify" aria-label="Spotify"
                 rel="me noopener noreferrer" title="Spotify Profile">
                 <i class="fab fa-spotify fa-lg"></i>
-            </a>
-
-            <a href="https://s.fmoran.me/github/" class="icon-wrapper icon-github" aria-label="GitHub"
-                rel="me noopener noreferrer" title="GitHub Profile">
-                <i class="fab fa-github fa-lg"></i>
             </a>
 
             <a href="mailto:hi@moranfong.com" class="icon-wrapper icon-email" aria-label="Email" rel="me"
@@ -254,6 +88,16 @@
                     <path
                         d="m6.08.234.179.727a7.3 7.3 0 0 0-2.01.832l-.383-.643A7.9 7.9 0 0 1 6.079.234zm3.84 0L9.742.96a7.3 7.3 0 0 1 2.01.832l.388-.643A8 8 0 0 0 9.92.234m-8.77 3.63a8 8 0 0 0-.916 2.215l.727.18a7.3 7.3 0 0 1 .832-2.01l-.643-.386zM.75 8a7 7 0 0 1 .081-1.086L.091 6.8a8 8 0 0 0 0 2.398l.74-.112A7 7 0 0 1 .75 8m11.384 6.848-.384-.64a7.2 7.2 0 0 1-2.007.831l.18.728a8 8 0 0 0 2.211-.919M15.251 8q0 .547-.082 1.086l.74.112a8 8 0 0 0 0-2.398l-.74.114q.082.54.082 1.086m.516 1.918-.728-.18a7.3 7.3 0 0 1-.832 2.012l.643.387a8 8 0 0 0 .917-2.219m-6.68 5.25c-.72.11-1.453.11-2.173 0l-.112.742a8 8 0 0 0 2.396 0l-.112-.741zm4.75-2.868a7.2 7.2 0 0 1-1.537 1.534l.446.605a8 8 0 0 0 1.695-1.689zM12.3 2.163c.587.432 1.105.95 1.537 1.537l.604-.45a8 8 0 0 0-1.69-1.691zM2.163 3.7A7.2 7.2 0 0 1 3.7 2.163l-.45-.604a8 8 0 0 0-1.691 1.69l.604.45zm12.688.163-.644.387c.377.623.658 1.3.832 2.007l.728-.18a8 8 0 0 0-.916-2.214M6.913.831a7.3 7.3 0 0 1 2.172 0l.112-.74a8 8 0 0 0-2.396 0zM2.547 14.64 1 15l.36-1.549-.729-.17-.361 1.548a.75.75 0 0 0 .9.902l1.548-.357zM.786 12.612l.732.168.25-1.073A7.2 7.2 0 0 1 .96 9.74l-.727.18a8 8 0 0 0 .736 1.902l-.184.79zm3.5 1.623-1.073.25.17.731.79-.184c.6.327 1.239.574 1.902.737l.18-.728a7.2 7.2 0 0 1-1.962-.811zM8 1.5a6.5 6.5 0 0 0-6.498 6.502 6.5 6.5 0 0 0 .998 3.455l-.625 2.668L4.54 13.5a6.502 6.502 0 0 0 6.93-11A6.5 6.5 0 0 0 8 1.5" />
                 </svg>
+            </a>
+            
+            <a href="https://s.fmoran.me/tgblog" class="icon-wrapper icon-telegram" aria-label="Telegram" 
+                rel="me noopener noreferrer" title="Telegram Channel">
+                <i class="fab fa-telegram fa-lg"></i>
+            </a>
+            
+            <a href="https://s.fmoran.me/mastodon" class="icon-wrapper icon-mastodon" aria-label="Mastodon" 
+                rel="me noopener noreferrer" title="Mastodon Profile">
+                <i class="fab fa-mastodon fa-lg"></i>
             </a>
         </nav>
 
