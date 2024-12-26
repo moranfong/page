@@ -116,34 +116,14 @@
         </div>
 
         <center>
-            <iframe src="https://quail.ink/fmoran/widget.external?theme=auto&list_slug=fmoran&layout=subscribe_form"
+            <iframe src="https://quaily.com/fmoran/widget.external?theme=auto&list_slug=fmoran&layout=subscribe_form"
                 data-theme="auto" width="88%" height="44px" title="Quail Widget" frameborder="0" allow="web-share"
                 allowfullscreen" style="margin-top: 20px;">
             </iframe>
         </center>
     </main>
-    <!-- Google Analytics -->
+    <!-- Scripts -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N96R6LQHQ"></script>
-    <script>
-        function createLines() {
-            const container = document.querySelector('.background-lines');
-            for (let i = 0; i < 15; i++) {
-                const line = document.createElement('div');
-                line.classList.add('line');
-                line.style.height = '1px';
-                line.style.width = '100%';
-                line.style.top = `${Math.random() * 100}%`;
-                line.style.animationDelay = `${Math.random() * 10}s`;
-                container.appendChild(line);
-            }
-        }
-        createLines();
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-9N96R6LQHQ');
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
-
 </html>
