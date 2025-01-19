@@ -4,6 +4,7 @@
     --card-padding: clamp(1.5rem, 5vw, 2.5rem);
     --card-width: clamp(300px, 90%, 400px);
     --size: 400px;
+    --speed: 5s;
 }
 
 .card {
